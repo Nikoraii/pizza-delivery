@@ -11,7 +11,7 @@ $dotenv->safeLoad();
 
 $mail = new PHPMailer(true);
 
-$mail->SMTPDebug = 3;
+// $mail->SMTPDebug = 3;
 // Get the form data
 $data = $_POST;
 
@@ -36,11 +36,9 @@ $mail->isHTML(true);
 $mail->Subject = 'Contact Form Submission';
 $mail->Body = "Name: $name <br> Email: $email <br> Message: $message";
 
-
 try {
     $mail->send();
     echo 'Message has been sent';
 } catch (Exception $e) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 }
-?>
