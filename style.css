@@ -250,3 +250,9 @@ body {
 #contact-form button:hover {
     transform: scale(1.05);
 }
+
+.modal-content, h5 {
+    /* background-color: #4E6C50; */
+    color: #820000;
+    font-weight: bold;
+}
