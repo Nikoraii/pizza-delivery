@@ -29,7 +29,7 @@ $mail->SMTPSecure = 'tls';
 $mail->Port = 587;
 
 $mail->setFrom($email, $name);
-$mail->addAddress('kolja.st@gmail.com');
+$mail->addAddress($_ENV['SEND_TO']);
 $mail->addReplyTo($email, $name);
 
 $mail->isHTML(true);
