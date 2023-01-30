@@ -133,7 +133,7 @@
         <div class="container-fluid p-3">
             <div class="row">
                 <div class="col-8">
-                    <iframe data-aos="zoom-in-right" data-aos-once="true" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104478.97862129203!2d-106.74651910968689!3d35.08253024379721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87220addd309837b%3A0xc0d3f8ceb8d9f6fd!2z0JDQu9Cx0YPQutC10YDQutC4LCDQndC-0LLQuCDQnNC10LrRgdC40LrQviwg0KHRmNC10LTQuNGa0LXQvdC1INCU0YDQttCw0LLQtQ!5e0!3m2!1ssr!2srs!4v1674831795222!5m2!1ssr!2srs" width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe data-aos="zoom-in-right" data-aos-once="true" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d577.0183569808196!2d-106.63194635494685!3d35.10399539649543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssr!2srs!4v1675110953474!5m2!1ssr!2srs" width="100%" height="650" style="border:0;" allowfullscreen="" loading="auto" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-4">
                     <h4 data-aos="zoom-in-left" data-aos-once="true">Find Us Here</h4>
@@ -158,6 +158,21 @@
                             </div>
                             <button  type="submit" class="btn">Send</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Thank you!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>We appreciate your feedback and we'll get back to you as soon as possible.</p>
                     </div>
                 </div>
             </div>
@@ -225,7 +240,8 @@
                 .then(response => response.text())
                 .then(data => {
                     console.log(data);
-                    // Perform any additional actions
+                    $("#exampleModalCenter").modal("toggle");
+                    form.reset();
                 })
                 .catch(error => {
                     console.error("Error:", error);
