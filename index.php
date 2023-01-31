@@ -33,11 +33,11 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+                <a class="nav-link dropdown-toggle" href="menu.php" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
                 <div class="dropdown-menu">
-                    <a class="nav-link" href="#">Pizza</a>
-                    <a class="nav-link" href="#">Sweets</a>
-                    <a class="nav-link" href="#">Drinks</a>
+                    <a class="nav-link" href="menu.php#pizza">Pizza</a>
+                    <a class="nav-link" href="menu.php#sweets">Sweets</a>
+                    <a class="nav-link" href="menu.php#drinks">Drinks</a>
                 </div>
             </li>
             <span class="divider"></span>
