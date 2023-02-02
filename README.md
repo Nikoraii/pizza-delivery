@@ -1,11 +1,11 @@
 # Project is still in development.
-> Index.php with the phpmailer contact form is done. Menu.php that shows items from databse is done. Cart is in development.
+> Index.php with the phpmailer contact form is done. Menu.php that shows items from database is done. The cart is currently in development.
 
 Pizza online delivery CRUD web application that, when finished, users will be able to login/register and order food. The orders will show up in the employee’s panel 
 which can further process the order. Admin will be able to change user and employee settings.
 
 ![This is an image](/screenshots/1.hero.jpg)
-For more images check the [screenshots](https://github.com/Nikoraii/pizza-delivery/tree/master/screenshots) folder. Style for every page is still in development.
+For more images check the [screenshots](https://github.com/Nikoraii/pizza-delivery/tree/master/screenshots) folder. The style for every page is still in development.
 
 # How to run
 1. download and install xampp
