@@ -8,7 +8,7 @@ body {
     padding: 0;
     min-height: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* background-color: #820000; */
+    /* background-color: #FAECD6; */
     /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/images/bg.jpg'); */
     overflow-x: hidden;
 }
@@ -59,6 +59,10 @@ body {
     margin: 2px;
 }
 
+::selection {
+    background-color: #F2DEBA;
+}
+
 section {
     margin-top: 56px;
 }
@@ -80,9 +84,10 @@ h1 {
 }
 .card {
     height: 100%;
-    border: none;
     width: 100%;
     margin-bottom: 20px;
+    border: none;
+    background-color: transparent;
 }
 
 .card-img-top {
@@ -93,11 +98,6 @@ h1 {
 
 .card img {
     border-radius: 5px;
-}
-
-select {
-    /* display: inline; */
-    /* width: fit-content; */
 }
 
 .card-title {
@@ -112,40 +112,110 @@ select {
 input {
     width: 20%;
     text-align: center;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
 }
 
 .order {
     display: flex;
     flex-direction: row;
-    margin-top: 5px;
-}
-
-.qty {
-    /* width: fit-content; */
-    /* padding: 3px; */
+    margin-top: 10px;
+    width: 100%;
 }
 
 
 .customize {
-    /* display: inline-block; */
+    /* display: inline; */
     /* flex-direction: row; */
     width: 100%;
-    margin-top: 15px;
+    /* margin-top: 5px; */
+    /* text-align-last: right; */
 }
 
-#s {
+.s {
     display: inline;
+    font-size: 20px;
     /* width: 10%; */
 }
 
 .price {
-    /* display: inline-block; */
-    float: right;
+    justify-self: end;
+    width: max-content;
     margin: 0;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4e6c50;
 }
 
-#add {
+.add_to_cart_button {
     float: right;
     /* display: inline-block; */
     /* margin-right: auto; */
+    border: none;
+    background-color: #4e6c50;
+    color: #F2DEBA;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.plus, .minus {
+    border: none;
+    background-color: #820000;
+    color: #FAECD6;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 30px;
+    padding: 3px;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+}
+
+button:focus {
+    outline: none;
+}
+
+.plus:hover:enabled, .minus:hover:enabled {
+    border: 2px solid #F2DEBA;
+}
+
+.plus:active:enabled, .minus:active:enabled {
+    outline: 1px solid #4e6c50;
+}
+
+#qty {
+    font-weight: bold;
+    border: none;
+}
+
+select {
+    border: 1px solid #F2DEBA;
+    color: #FAECD6;
+    font-weight: bold;
+    background-color: #820000;
+    border-radius: 5px;
+}
+
+select:focus {
+    border: 1px solid #F2DEBA;
+    outline: none;
+}
+
+option {
+    font-weight: bold;
+    background-color: #820000;
+    border-radius: 5px;
+}
+
+option:hover {
+    background-color: #4e6c50;
+}
+
+option::selection {
+    background-color: #4e6c50;
+}
+
+h4 {
+    color: #820000;
 }
