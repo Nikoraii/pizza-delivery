@@ -235,16 +235,13 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
               $("#minus-pizza-" + id_s).attr('disabled', 'true');
             });
 
-            // add the 'add to cart' button click event listener
             $('.add_to_cart_button').on('click', function() {
-              // get the product id and quantity from the form fields
               let check = $(this).attr('id');
               let product_id = check.substring(check.lastIndexOf('-') + 1);
               let product_type = check.substring(check.indexOf('-') + 1, check.lastIndexOf('-'));
               let quantity = $('#qty-' + product_type + '-' + product_id).val();
               console.log(product_type + "(id: " + product_id + ")" + " = " + quantity);
 
-              // send the request to the PHP file
               fetch('controllers/add_to_cart.php', {
                 method: 'POST',
                 headers: {
@@ -254,17 +251,13 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
               })
                 .then(response => response.json())
                 .then(data => {
-                  // check if the operation was successful
                   if (data.success) {
-                    // show a success message
                     alert('Item added to cart!');
                   } else {
-                    // show an error message
                     alert('There was an error adding the item to the cart.');
                   }
                 })
                 .catch(error => {
-                  // show an error message
                   alert('There was an error processing the request.');
                 });
             });
