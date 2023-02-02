@@ -9,7 +9,7 @@ For more images check the [screenshots](https://github.com/Nikoraii/pizza-delive
 
 # How to run
 1. download and install xampp
-2. clone to project in xampp->htdocs->project-name
+2. clone this project in xampp/htdocs/project-name
 3. install dependencies
 4. open xampp and run apache and mysql
 5. go to mysql admin panel and create database 'pizza'
