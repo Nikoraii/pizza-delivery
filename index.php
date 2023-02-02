@@ -1,3 +1,7 @@
+<?php 
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,7 +19,7 @@
   <body>
 
 <body>
-    <nav class="navbar navbar-expand fixed-top">
+<nav class="navbar navbar-expand fixed-top">
         <ul class="nav navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link logo d-inline" href="#"><img src="assets/images/pizza-logo.png" alt="Pizza Logo" width="45px"></a>
@@ -41,12 +45,21 @@
                 </div>
             </li>
             <span class="divider"></span>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Login</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Register</a>
-            </li>
+            <?php if (!isset($_SESSION['user_id'])) { ?>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Register</a>
+                </li> 
+            <?php } else { ?>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                </li> 
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Logout</a>
+                </li> 
+            <?php } ?>
         </ul>
     </nav>
 
@@ -179,15 +192,7 @@
         </div>
     </section>
 
-    <footer class="bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            &copy; <?php echo date("Y"); ?>
-            Made with <i class="fa fa-heart" aria-hidden="true"></i> by
-            <a class="text-dark" traget="" href="https://github.com/Nikoraii">Nikoraii</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+    <?php include 'templates/footer.php' ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -223,8 +228,10 @@
                     $("#btn-back-to-top").css({'display' : 'none'});
                 }
             });
-            $("#btn-back-to-top").click(function() {
-                window.scrollTo({ top: 0});
+            $(document).ready(function(){
+                $("#btn-back-to-top").click(function() {
+                    window.scrollTo({ top: 0});
+                });
             });
             const form = document.getElementById("contact-form");
 
