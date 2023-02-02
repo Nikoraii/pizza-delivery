@@ -5,7 +5,7 @@ Pizza online delivery CRUD web application that, when finished, users will be ab
 which can further process the order. Admin will be able to change user and employee settings.
 
 ![This is an image](/screenshots/1.hero.jpg)
-For more images check the [screenshots](https://github.com/Nikoraii/pizza-delivery/tree/master/screenshots) folder.
+For more images check the [screenshots](https://github.com/Nikoraii/pizza-delivery/tree/master/screenshots) folder. Style for every page is still in development.
 
 # How to run
 1. download and install xampp
