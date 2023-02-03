@@ -19,5 +19,3 @@ function add_to_cart($product_type, $product_id, $quantity) {
     $_SESSION['cart'][$product] = $quantity;
   }
 }
-
-?>
