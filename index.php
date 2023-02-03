@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
 
@@ -47,17 +47,17 @@ session_start();
             <span class="divider"></span>
             <?php if (!isset($_SESSION['user_id'])) { ?>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Login</a>
+                    <a href="login.php" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Register</a>
+                    <a href="register.php" class="nav-link">Register</a>
                 </li> 
             <?php } else { ?>
                 <li class="nav-item">
                     <a href="#" class="nav-link"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 </li> 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Logout</a>
+                    <a href="controllers/logout-user.php" class="nav-link">Logout</a>
                 </li> 
             <?php } ?>
         </ul>
@@ -76,7 +76,7 @@ session_start();
             <hr class="my-2">
             <p>Lorem ipsum</p>
             <p class="lead">
-                <a class="btn btn-lg order" href="#" role="button">ORDER NOW</a>
+                <a class="btn btn-lg order" href="menu.php" role="button">ORDER NOW</a>
             </p>
         </div>
     </div>
@@ -240,7 +240,7 @@ session_start();
 
                 const formData = new FormData(form);
 
-                fetch("contact.php", {
+                fetch("controllers/contact.php", {
                     method: "POST",
                     body: formData
                 })
