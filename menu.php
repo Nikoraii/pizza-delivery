@@ -9,7 +9,6 @@ $drinks = Drink::allDrinks();
 
 session_start();
 if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-  // get the items in the cart
   $items = $_SESSION['cart'];
 }
 
@@ -25,7 +24,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style-menu.css">
+    <link rel="stylesheet" href="assets/css/style-menu.css">
   </head>
   <body>
     <nav class="navbar navbar-expand fixed-top">
@@ -47,17 +46,17 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
             <span class="divider"></span>
             <?php if (!isset($_SESSION['user_id'])) { ?>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Login</a>
+                    <a href="login.php" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Register</a>
+                    <a href="register.php" class="nav-link">Register</a>
                 </li> 
             <?php } else { ?>
                 <li class="nav-item">
                     <a href="#" class="nav-link"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 </li> 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Logout</a>
+                    <a href="controllers/logout-user.php" class="nav-link">Logout</a>
                 </li> 
             <?php } ?>
         </ul>
