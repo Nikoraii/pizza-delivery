@@ -30,4 +30,23 @@ class Pizza extends Table
 
         return $db->select('Pizza', $query, $params);
     }
+
+    public static function getPizza($pizza_id)
+    {
+        $db = Database::getInstance();
+
+        $query = 'SELECT * FROM products_pizzas WHERE id = :pizza_id';
+
+        $params = [
+            ':pizza_id' => $pizza_id
+        ];
+
+        $pizzas = $db->select('Pizza', $query, $params);
+
+        foreach ($pizzas as $pizza) {
+            return $pizza;
+        }
+
+        return false;
+    }
 }
