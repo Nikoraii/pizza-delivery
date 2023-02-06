@@ -44,4 +44,22 @@ class User extends Table
         }
         return null;
     }
+
+    public static function payCart($user_id, $full_price)
+    {
+        $status = 'waiting';
+
+        $db = Database::getInstance();
+
+        $query = 'INSERT INTO orders (user_id, full_price, status) '
+        . 'VALUES(:uid, :fp, :s)';
+
+        $params = [
+            ':uid' => $user_id,
+            ':fp' => $full_price,
+            ':s' => $status
+        ];
+
+        $db->insert('User', $query, $params);
+    }
 }
