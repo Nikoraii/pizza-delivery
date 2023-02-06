@@ -13,16 +13,22 @@ class Dessert extends Table
         return $db->select('Dessert', $query);
     }
 
-    // public static function getDessertPrice($dessert_id)
-    // {
-    //     $db = Databasee::getInstance();
+    public static function getDessert($dessert_id)
+    {
+        $db = Database::getInstance();
 
-    //     $query = 'SELECT * FROM products_desserts_prices' . 'WHERE dessert_id = :dessert_id';
+        $query = 'SELECT * FROM products_desserts WHERE id = :dessert_id';
 
-    //     $params = [
-    //         ':dessert_id' => $dessert_id
-    //     ];
+        $params = [
+            ':dessert_id' => $dessert_id
+        ];
 
-    //     return $db->select('Dessert', $query, $params);
-    // }
+        $desserts = $db->select('Dessert', $query, $params);
+
+        foreach ($desserts as $dessert) {
+            return $dessert;
+        }
+
+        return false;
+    }
 }
