@@ -46,6 +46,9 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
             <span class="divider"></span>
             <?php if (!isset($_SESSION['user_id'])) { ?>
                 <li class="nav-item">
+                    <a href="cart.php" class="nav-link"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                </li> 
+                <li class="nav-item">
                     <a href="login.php" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item">
@@ -53,7 +56,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                 </li> 
             <?php } else { ?>
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                  <a href="cart.php" class="nav-link"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 </li> 
                 <li class="nav-item">
                     <a href="controllers/logout-user.php" class="nav-link">Logout</a>
@@ -239,6 +242,11 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
               let product_id = check.substring(check.lastIndexOf('-') + 1);
               let product_type = check.substring(check.indexOf('-') + 1, check.lastIndexOf('-'));
               let quantity = $('#qty-' + product_type + '-' + product_id).val();
+              let size = "";
+              if (product_type == "pizza") {
+                size = $("#pizza-size-" + product_id).val();
+              }
+              console.log(size);
               console.log(product_type + "(id: " + product_id + ")" + " = " + quantity);
 
               fetch('controllers/add_to_cart.php', {
@@ -246,7 +254,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                 headers: {
                   'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: 'product_id=' + product_id + '&product_type=' + product_type + '&quantity=' + quantity
+                body: 'product_id=' + product_id + '&product_type=' + product_type + '&quantity=' + quantity + '&size=' + size
               })
                 .then(response => response.json())
                 .then(data => {
@@ -257,10 +265,9 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                   }
                 })
                 .catch(error => {
-                  alert('There was an error processing the request.');
+                  console.log('There was an error processing the request.' + error);
                 });
             });
-
          });
     </script>
   </body>
