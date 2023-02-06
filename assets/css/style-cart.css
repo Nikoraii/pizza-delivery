@@ -1,0 +1,75 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 56px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* background-color: #F2DEBA; */
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/images/bg.jpg'); */
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: #4e6c50;
+    text-align: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #FAECD6;
+    position: relative;
+    font-weight: bold;
+}
+
+.nav-link:not(.logo)::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #820000;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+}
+
+.container {
+    margin-top: 60px;
+    padding: 5px;
+}
+
+.price {
+    border-top: 5px solid #FAECD6;
+    margin-top: 10px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+#pay_all {
+    font-weight: bold;
+    border: none;
+    background-color: #820000;
+    color: white;
+    border-radius: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 0 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
