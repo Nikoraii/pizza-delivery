@@ -47,6 +47,9 @@ session_start();
             <span class="divider"></span>
             <?php if (!isset($_SESSION['user_id'])) { ?>
                 <li class="nav-item">
+                    <a href="cart.php" class="nav-link"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                </li> 
+                <li class="nav-item">
                     <a href="login.php" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item">
@@ -54,7 +57,7 @@ session_start();
                 </li> 
             <?php } else { ?>
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                    <a href="cart.php" class="nav-link"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
                 </li> 
                 <li class="nav-item">
                     <a href="controllers/logout-user.php" class="nav-link">Logout</a>
