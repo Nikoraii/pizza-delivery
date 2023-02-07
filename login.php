@@ -32,22 +32,29 @@ if (isset($_SESSION['user_id'])) {
         <?php if (isset($_GET['error'])) { ?>
             <h2>Wrong email or password.</h2>
         <?php } ?>
-        <form action="controllers/login-user.php" method="post" id="login-form">
-          <div class="form-group">
-              <label  for="">Email:</label>
-              <input  type="email" name="email" id="email" class="form-control" placeholder="example@gmail.com" aria-describedby="helpId" required>
+        <div class="row">
+          <div class="col-lg-6 p-0">
+            <img src="assets/images/pizza.jpg" alt="" class="img img-fluid">
           </div>
-          <div class="form-group" id="show_hide_password">
-            <label for="password">Password:</label>
-            <div class="input-group mb-3">
-              <input type="password" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="" required>
-              <div class="input-group-append">
-                <a class="btn show-hide" href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+          <div class="col-lg-6">
+            <form action="controllers/login-user.php" method="post" id="login-form">
+              <div class="form-group">
+                  <label  for="">Email:</label>
+                  <input  type="email" name="email" id="email" class="form-control" placeholder="example@gmail.com" aria-describedby="helpId" required>
               </div>
-            </div>
+              <div class="form-group" id="show_hide_password">
+                <label for="password">Password:</label>
+                <div class="input-group mb-3">
+                  <input type="password" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="" required>
+                  <div class="input-group-append">
+                    <a class="btn show-hide" href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              <button id="login" type="submit" class="btn">Sign In</button>
+            </form>
           </div>
-          <button id="login" type="submit" class="btn">Sign In</button>
-        </form>
+        </div>
     </div>
       
     <!-- Optional JavaScript -->
@@ -65,14 +72,14 @@ if (isset($_SESSION['user_id'])) {
                     $('#show_hide_password i').removeClass( "fa-eye" );
                     $('.show-hide').css({
                     "background-color": "white",
-                    "color": "#820000"
+                    "color": "#4e6c50"
                     });
                 }else if ($('#show_hide_password input').attr("type") == "password"){
                     $('#show_hide_password input').attr('type', 'text');
                     $('#show_hide_password i').removeClass( "fa-eye-slash" );
                     $('#show_hide_password i').addClass( "fa-eye" );
                     $('.show-hide').css({
-                    'background-color': '#820000', 
+                    'background-color': '#4e6c50', 
                     'color': 'white'
                     });
                 }
