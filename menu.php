@@ -24,6 +24,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style-menu.css">
   </head>
   <body>
@@ -67,13 +68,13 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
 
     <section id="pizza">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-right" data-aos-once="true">
                 <h1>Pizza</h1>
                 <div class="section-divider"></div>
             </div>
             <div class="row">
               <?php foreach ($pizzas as $pizza) { ?>
-                <div class="col-md-3">
+                <div class="col-md-3" data-aos="fade-up" data-aos-once="true">
                     <div class="card text-left">
                       <img class="card-img-top" src="<?= $pizza->image ?>" alt="">
                       <div class="card-body p-1">
@@ -107,13 +108,13 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
 
     <section id="sweets">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header" data-aos="fade-right" data-aos-once="true">
             <h1>Dessert</h1>
             <div class="section-divider"></div>
           </div>
           <div class="row">
             <?php foreach ($desserts as $dessert) { ?>
-              <div class="col-md-3">
+              <div class="col-md-3" data-aos="fade-up" data-aos-once="true">
                     <div class="card text-left">
                       <img class="card-img-top" src="<?= $dessert->image ?>" alt="">
                       <div class="card-body p-1">
@@ -138,14 +139,14 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
 
     <section id="drinks">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header" data-aos="fade-right" data-aos-once="true">
             <h1>Drinks</h1>
             <div class="section-divider"></div>
           </div>
           <div class="row">
             <?php foreach ($drinks as $drink) { ?>
               <div class="col-md-3">
-                <div class="card text-left">
+                <div class="card text-left" data-aos="fade-up" data-aos-once="true">
                   <img class="card-img-top" src="<?= $drink->image ?>" alt="">
                   <div class="card-body">
                     <h4 class="card-title"><?= $drink->name ?></h4>
@@ -172,7 +173,9 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      AOS.init();
          $(document).ready(function(){
             $(".plus").on('click', function() {
               let id = $(this).parent().attr('data-id');
