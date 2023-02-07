@@ -44,11 +44,11 @@ body {
 }
 
 .container {
-    background-color: #FAECD6;
+    background-color: #820000;
     margin-top: 10%;
     border-radius: 20px;
     font-weight: bold;
-    outline: 3px solid #820000;
+    color: white;
 }
 
 form {
@@ -56,7 +56,7 @@ form {
 }
 
 #register {
-    background-color: #820000;
+    background-color: #4e6c50;
     display: block;
     margin: 0 auto;
     border: 1px solid #F2DEBA;
@@ -79,9 +79,9 @@ form {
 
 .show-hide {
     background-color: white;
-    outline: 1px solid #820000;
+    outline: 1px solid #4e6c50;
     outline-offset: -1px;
-    color: #820000;
+    color: #4e6c50;
 }
 
 .modal-content, h5 {
@@ -89,3 +89,17 @@ form {
     color: #820000;
     font-weight: bold;
 }
+
+.p-0 img {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+  }
+  
+  html.is-animating .transition-fade {
+    opacity: 0;
+  }
