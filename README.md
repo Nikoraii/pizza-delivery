@@ -1,5 +1,5 @@
 # This project is still in development.
-> Index, Menu, Cart and sign in and sign up pages are done. Next step is theemployee panel.
+> Index, Menu, Cart and sign in and sign up pages are done. Next step is the employee panel.
 
 Online pizza delivery CRUD web application that, when finished, users will be able to login/register and order food. The orders will show up in the employee’s panel
 which can further process the order. Admin will be able to change user and employee settings.
